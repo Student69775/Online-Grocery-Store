@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us - Fresh Flesh</title>
+
+    <style>
+        body {
+          background-color: #F3EBF6;
+          font-family: Arial, Helvetica, sans-serif;
+          margin: 0;
+        }
+
+        html {
+          box-sizing: border-box;
+        }
+
+        *, *:before, *:after {
+          box-sizing: inherit;
+        }
+
+        .column {
+          float: left;
+          width: 33.3%;
+          margin-bottom: 16px;
+          padding: 0 8px;
+        }
+
+        .card {
+          border-radius: 20px;
+          box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+          margin: 8px;
+          background-color: white;
+        }
+
+        img {
+          border-radius: 20px;
+          width: 100%;
+          height: 27rem;
+        }
+
+        .about-section {
+          padding: 50px;
+          text-align: center;
+          background-color: #8B0000;
+          color: white;
+        }
+
+        .container {
+          padding: 0 16px;
+        }
+
+        .container::after, .row::after {
+          content: "";
+          clear: both;
+          display: table;
+        }
+
+        .title {
+          color: grey;
+        }
+
+        .button {
+          background: linear-gradient(to right, #ff4500, #ff6347);
+          border-radius: 20px;
+          outline: none;
+          border: none;
+          display: inline-block;
+          padding: 8px;
+          color: white;
+          text-align: center;
+          cursor: pointer;
+          width: 40%;
+          margin-left: 30%;
+        }
+
+        .button:hover {
+          background-color: #555;
+        }
+
+        .link {
+            text-decoration: none;
+            color: white;
+        }
+        .link:hover {
+            color: #ff6347;
+        }
+
+        @media screen and (max-width: 650px) {
+          .column {
+            width: 100%;
+            display: block;
+          }
+        }
+    </style>
+</head>
+<body>
+<div class="about-section">
+    <h1>“FROM FARM TO YOUR TABLE”</h1>
+    <h2>FRESH MEAT, DELIVERED RIGHT</h2>
+    <p>
+        Welcome to Fresh Flesh, your trusted source for premium quality fresh meat!
+        <br><br> We are passionate about providing you with ethically sourced, fresh, and top-quality meat products.
+        <br> Experience hassle-free shopping with a commitment to quality, hygiene, and customer satisfaction.
+        <br> Our platform ensures you get the freshest cuts, straight from the source to your table.
+        <br> Whether you're preparing a family meal or a grand feast, we've got you covered.
+        <br><br> Thank you for choosing Fresh Flesh and trusting us for your fresh meat needs!
+    </p>
+    <a href="/" class="link">Go to homepage</a>
+</div>
+
+
+</body>
+</html>

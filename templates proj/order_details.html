@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Details</title>
+    <style>
+        body {
+            /* Add your background image URL here */
+            background-image: url('https://www.hdsfoundation.org/wp-content/uploads/dark-blue-background-hd-wallpaper-12829.jpg');
+            /* Set background image size and other properties as needed */
+            background-size: cover; /* Adjust as needed */
+            background-repeat: no-repeat; /* Adjust as needed */
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Adjust as needed */
+            color: black;
+        }
+        .order-details {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .order-details h2 {
+            margin-top: 0; /* Remove top margin for the heading */
+            font-size: 24px; /* Increase heading font size */
+            
+        }
+        .order-details p {
+            margin-bottom: 10px; /* Add space between paragraphs */
+            font-size: 18px; /* Increase paragraph font size */
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="order-details">
+            <!-- Your order details here -->
+            {% if order %}
+                <h2>Your Order Details</h2>
+                <p>Order ID: {{ order.id }}</p>
+                {% for order_item in order.orderitem_set.all %}
+                    <p>Product: {{ order_item.product.name }}</p> 
+                    <p>Quantity: {{ order_item.quantity }}</p>
+                    <p>Price of 1 Kg: ₹{{ order_item.price }}</p>
+                {% endfor %}
+                <p>Shipping Charge: ₹{{ order.shipping_charge }}</p> 
+                {% with total_cost=order_price|add:shipping_charge %}
+                    <p>Total Cost: {{ total_cost }}</p>
+                {% endwith %}
+                <p>Total Cost: ₹{{ order.total_cost }}</p>
+                <p>Status: {{ order.status }}</p>
+            {% else %}
+                <p>No order details found.</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
